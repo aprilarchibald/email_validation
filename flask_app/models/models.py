@@ -53,7 +53,7 @@ class Email:
         if len(form_data['email']) <= 0:
             flash('email is required', 'err_email')
             is_valid = False
-        if not EMAIL_REGEX.match(form_data['email']): 
+        elif not EMAIL_REGEX.match(form_data['email']): 
             flash("Invalid email address!", 'err_email')
             is_valid = False
         return is_valid
